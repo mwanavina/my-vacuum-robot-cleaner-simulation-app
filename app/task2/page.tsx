@@ -69,7 +69,7 @@ export default function MUBASCorridorRobotSimulation() {
 
       if (robotLocation === "Corridor") {
         // Find the nearest dirty room
-        const dirtyRooms = Object.entries(corridor.rooms).filter(([_, state]) => state === "Dirty")
+        const dirtyRooms = Object.entries(corridor.rooms).filter(([, state]) => state === "Dirty")
         if (dirtyRooms.length > 0) {
           const nearestRoom = dirtyRooms.reduce((nearest, current) => {
             const nearestDistance = Math.abs(Number(nearest[0]) - (robotLocation === "Corridor" ? 40 : robotLocation))

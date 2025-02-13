@@ -80,7 +80,7 @@ export default function MUBASMultiFloorRobotSimulation() {
     const findNextDirtyRoom = (startFloor: number) => {
       for (let f = startFloor; f < simulationState.building.floors.length; f++) {
         const dirtyRoom = Object.entries(simulationState.building.floors[f].rooms).find(
-          ([_, state]) => state === "Dirty",
+          ([, state]) => state === "Dirty",
         )
         if (dirtyRoom) {
           return { floor: f, room: Number(dirtyRoom[0]) }
@@ -88,7 +88,7 @@ export default function MUBASMultiFloorRobotSimulation() {
       }
       for (let f = 0; f < startFloor; f++) {
         const dirtyRoom = Object.entries(simulationState.building.floors[f].rooms).find(
-          ([_, state]) => state === "Dirty",
+          ([, state]) => state === "Dirty",
         )
         if (dirtyRoom) {
           return { floor: f, room: Number(dirtyRoom[0]) }
@@ -108,7 +108,7 @@ export default function MUBASMultiFloorRobotSimulation() {
     const currentFloor = simulationState.building.floors[floor]
 
     if (position === "Corridor") {
-      const dirtyRoom = Object.entries(currentFloor.rooms).find(([_, state]) => state === "Dirty")
+      const dirtyRoom = Object.entries(currentFloor.rooms).find(([, state]) => state === "Dirty")
       if (dirtyRoom) {
         await updateState({
           robotLocation: { floor, position: Number(dirtyRoom[0]) },
