@@ -20,6 +20,9 @@ export default function Home() {
         <Link href="/task2.1">
           <Button className="w-64">TASK2[hard] Multi-Floor</Button>
         </Link>
+        <Link href="/extra1">
+          <Button className="w-64">EXTRA 1</Button>
+        </Link>
       </div>
     </div>
   )
